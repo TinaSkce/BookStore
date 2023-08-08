@@ -1,0 +1,25 @@
+<app-search> </app-search>
+<app-tags> </app-tags>
+<ul>
+    <li *ngFor="let book of books">
+        <a>
+            <div class="image-container">
+                <img src="{{ book.imageUrl }}" alt="">
+            </div>
+            <div class="content">
+                <div class="name">
+                    {{ book.name }}
+                </div>
+                <div class="author">
+                    {{ book.author }}
+                </div>
+                <span class="favourite {{book.favourite?'':'not'}}">
+                    ❤
+                </span>
+                <div class="price">
+                    {{book.price | currency: 'zł'}}
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
