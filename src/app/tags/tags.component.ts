@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tag } from '../shared/modules/tag';
 import { BookService } from '../services/book/book.service';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-tags',
@@ -9,11 +10,18 @@ import { BookService } from '../services/book/book.service';
 })
 export class TagsComponent implements OnInit{
 
-  tags: Tag[]=[];
+  @Input()
+  bookPageTags?:string[];
+
+  @Input()
+  justifyContent:string = 'center';
+
+  tags?: Tag[];
 
   constructor(private bookService: BookService){};
 
   ngOnInit(): void {
+    if(!this.bookPageTags)
     this.tags = this.bookService.getAllTags();
   }
 

@@ -1,0 +1,43 @@
+<div class="container">
+    <img [src]="book.imageUrl" [alt]="book.name"/>
+
+<div class="details">
+    <div class="header">
+        <span class="name">
+            {{book.name}}
+        </span>
+        <span class="favourite {{book.favourite?'':'not'}}">
+            ❤
+        </span>
+    </div>
+    <div class="author">
+        <span class="author">
+            {{book.author}}
+        </span> 
+    </div>
+    <div class="tags">
+        <app-tags [bookPageTags]="book.tags" justifyContent="start"></app-tags>
+    </div>
+    <div class="price">
+        <span> {{ book.price | currency:'zl'}} </span>
+    </div>
+    <div class="publisher">
+        <span>Publisher: {{ book.publisher }}</span>
+    </div>
+    <div class="pages">
+        <span>Pages: {{ book.numberOfPages }}</span>
+    </div>
+    <div class="binding">
+        <span>Binding: {{ book.binding }}</span>
+    </div>
+    <button>
+        Add to Cart
+    </button>
+</div>
+</div>
+<div class="description">
+    <span class="descriptionName"> Description: </span>
+    <span class="description">
+    {{book.description}}
+</span>
+</div>

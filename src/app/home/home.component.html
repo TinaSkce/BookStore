@@ -2,7 +2,7 @@
 <app-tags> </app-tags>
 <ul>
     <li *ngFor="let book of books">
-        <a>
+        <a routerLink="/book/{{book.id}}">
             <div class="image-container">
                 <img src="{{ book.imageUrl }}" alt="">
             </div>
