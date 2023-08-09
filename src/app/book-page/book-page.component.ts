@@ -10,7 +10,10 @@ import { CartService } from '../services/cart/cart.service';
   styleUrls: ['./book-page.component.css']
 })
 export class BookPageComponent implements OnInit {
+
+  showCartMessage = false;
   book!:Book;
+
   constructor(private activatedRoute: ActivatedRoute, 
     private bookService: BookService,
     private cartService: CartService,
@@ -27,6 +30,11 @@ export class BookPageComponent implements OnInit {
   addToCart(){
     this.cartService.addToCart(this.book);
     //this.router.navigateByUrl('cart-page');
+    this.showCartMessage = true;
+
+    setTimeout(() => {
+      this.showCartMessage = false;
+    }, 3000);
   }
 
 }

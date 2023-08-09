@@ -34,6 +34,9 @@
     <button (click)="addToCart()">
         Add to Cart
     </button>
+    <div *ngIf="showCartMessage" class="cart-message">
+        Book added to the cart!
+    </div>
 </div>
 </div>
 <div *ngIf="book" class="description">
