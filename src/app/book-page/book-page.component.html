@@ -13,6 +13,9 @@
             {{book.author}}
         </span> 
     </div>
+    <div class="rating">
+        <star-rating [stars]="book.stars" [size]="1.8" />
+      </div>
     <div class="tags">
         <app-tags [bookPageTags]="book.tags" justifyContent="start"></app-tags>
     </div>

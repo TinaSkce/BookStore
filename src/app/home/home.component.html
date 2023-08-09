@@ -14,6 +14,9 @@
                 <div class="author">
                     {{ book.author }}
                 </div>
+                <div class="stars">
+                    <star-rating [stars]="book.stars" />
+                  </div>
                 <div class="price">
                     {{book.price | currency: 'zł'}}
                 </div>

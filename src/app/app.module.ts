@@ -13,6 +13,7 @@ import { BookPageComponent } from './book-page/book-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { StarRatingComponent } from './star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FooterComponent,
     CartPageComponent,
     NotFoundComponent,
+    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
