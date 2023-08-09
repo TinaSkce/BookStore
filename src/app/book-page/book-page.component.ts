@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/modules/book';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../services/book/book.service';
+import { CartService } from '../services/cart/cart.service';
 
 @Component({
   selector: 'app-book-page',
@@ -10,7 +11,10 @@ import { BookService } from '../services/book/book.service';
 })
 export class BookPageComponent implements OnInit {
   book!:Book;
-  constructor(private activatedRoute: ActivatedRoute, private bookService: BookService){
+  constructor(private activatedRoute: ActivatedRoute, 
+    private bookService: BookService,
+    private cartService: CartService,
+    private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if(params['id'])
         this.book = this.bookService.getBookById(params['id']);
@@ -18,6 +22,11 @@ export class BookPageComponent implements OnInit {
   };
   ngOnInit(): void {
     
+  };
+
+  addToCart(){
+    this.cartService.addToCart(this.book);
+    this.router.navigateByUrl('cart-page');
   }
 
 }
