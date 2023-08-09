@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/modules/book';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { BookService } from '../services/book/book.service';
 import { CartService } from '../services/cart/cart.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-book-page',
@@ -22,6 +23,12 @@ export class BookPageComponent implements OnInit {
       if(params['id'])
         this.book = this.bookService.getBookById(params['id']);
     })
+
+    this.router.events
+    .pipe(filter((event) => event instanceof NavigationEnd))
+    .subscribe(() => {
+      window.scrollTo(0, 0);
+    });
   };
   ngOnInit(): void {
     
