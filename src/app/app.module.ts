@@ -24,7 +24,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BookPageComponent,
     FooterComponent,
     CartPageComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

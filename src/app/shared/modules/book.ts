@@ -4,7 +4,7 @@ export class Book{
     author!:string;
     price!:number;
     tags?:string[];
-    favourite:boolean = false;
+    stars:number = 0;
     imageUrl!: string;
     description!:string;
     publisher!: string;
