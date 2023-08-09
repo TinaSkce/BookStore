@@ -13,13 +13,18 @@ resetLinkText="Go to homepage"> </app-not-found>
                 </a>
             </div>
             <div>
-                <select #quantitySelect (change)="changeQuantity(cartItem, quantitySelect.value)"> 
+                <!-- <select #quantitySelect (change)="changeQuantity(cartItem, quantitySelect.value)"> 
                     <option> 1 </option>
                     <option> 2 </option>
                     <option> 3 </option>
                     <option> 4 </option>
                     <option> 5 </option>
-                </select>
+                </select> -->
+                <select #quantitySelect (change)="changeQuantity(cartItem, quantitySelect.value)">
+                    <option *ngFor="let option of quantityOptions" [value]="option" [selected]="cartItem.quantity === option">
+                      {{ option }}
+                    </option>
+                  </select>
             </div>
     
             <div>

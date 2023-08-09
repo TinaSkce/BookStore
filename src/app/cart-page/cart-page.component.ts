@@ -9,7 +9,7 @@ import { CartItem } from '../shared/modules/cartItem';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
-
+  quantityOptions = [1, 2, 3, 4, 5];
   cart!:Cart;
   constructor(private cartService: CartService){
     this.setCart();
