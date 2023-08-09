@@ -36,7 +36,7 @@ resetLinkText="Go to homepage"> </app-not-found>
     <div class="checkout">
         <div>
             <div class="foods-count">
-                {{cart.items.length}}
+                {{calculateTotalQuantity()}}
             </div>
             <div class="total-price">
                 {{cart.totalPrice | currency:'zl'}}

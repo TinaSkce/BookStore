@@ -26,7 +26,7 @@ export class BookPageComponent implements OnInit {
 
   addToCart(){
     this.cartService.addToCart(this.book);
-    this.router.navigateByUrl('cart-page');
+    //this.router.navigateByUrl('cart-page');
   }
 
 }

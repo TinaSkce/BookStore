@@ -4,14 +4,13 @@ footer{
     margin-top: auto;
 }
 
-a{
+ a{
     color: red;
 }
 
 a:hover{
-    background: red;
-    color: white;
-}
+    color: red;
+} 
 
 .container{
     margin: 0 auto;

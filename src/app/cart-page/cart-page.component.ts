@@ -26,6 +26,17 @@ export class CartPageComponent implements OnInit {
     this.setCart();
   }
 
+  calculateTotalQuantity(): number {
+    let totalQuantity = 0;
+    if (this.cart && this.cart.items) {
+      for (const cartItem of this.cart.items) {
+        totalQuantity += cartItem.quantity;
+      }
+    }
+    this.setCart();
+    return totalQuantity;
+  }
+
   setCart(){
     this.cart = this.cartService.getCart();
   }

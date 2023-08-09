@@ -7,7 +7,7 @@
         <span class="name">
             {{book.name}}
         </span>
-        <span class="favourite {{book.favourite?'':'not'}}">
+        <span [class]="book.favourite ? '' : 'favourite not'">
             ❤
         </span>
     </div>
